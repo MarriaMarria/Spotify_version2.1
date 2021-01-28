@@ -11,34 +11,22 @@
         <div class="container">
             <h1>My playlist</h1>
 
-            <!--IMAGES-->
-
             <div class="img">
-                <img src="Media/lp_forever.jpeg" alt="Serg Tankian performing Gate 21">
+                <img src="Media/lp_forever.jpeg" alt="LP" id="covers">
             </div>
 
-            <!--TITLE-->
-            <div class="title">
-                <h1>Songname</h1>
-                <p>Artist</p>
-            </div>
-
+            <audio src="Media/forever.mp3" id="song"></audio>
+            <div class="title" class="songArtists">LP</div>
+            <div class="songTitle">Forever for now</div>
+                
         </div>
 
-        <!-- AUDIO-->
-
-        <!-- <div>
-            <audio id="audio">
-                <source src="Media/forever.mp3" type="audio/mpeg">
-            </audio>
-        </div> -->
-        
         <!--BUTTONS-->
         <div class="audio-btns">
             <div class="play-btns">
                 <a href="#"><i class="fa fa-backward" aria-hidden="true"></i></a>
                 <a href="#" class="play-pause"><i class="fa fa-play" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-forward" aria-hidden="true"></i></a>
+                <a href="#" class="forward"><i class="fa fa-forward" aria-hidden="true"></i></a>
             </div>
             <div class="sound-btns">
                 <span>
@@ -49,6 +37,7 @@
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 

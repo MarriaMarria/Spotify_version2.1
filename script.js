@@ -1,54 +1,76 @@
-let audios = ['./Media/forever.mp3', './Media/goodbye.mp3'];
-// let covers = ['lplost.jpeg', 'mann.jpeg', 'meds.jpeg', 'serggate.jpeg'];
+const song = document.querySelector('#song'); // CONST OR LET?
+const songTitle = document.querySelector('.songTitle'); // HERE OR INSIDE FUNCTIONS?
+const songArtist = document.querySelector('.songArtists');
+const cover = document.querySelector('#covers');
+const audio_btns = document.querySelector(".audio-btns");
+const playBtn = document.querySelector(".play-pause");
+const decreaseBtn = document.querySelector('.decrease');
+const increaseBtn = document.querySelector('.increase');
+const forward = document.querySelector('.forward');
+const muteBtn = document.querySelector('.mute');
 
+songs = ['./Media/forever.mp3', './Media/goodbye.mp3', './Media/mann.mp3', './Media/meds.mp3', './Media/walls.mp3'];
+covers = ['lp_forever.jpeg', 'gate21.jpeg', 'mann.jpeg', 'meds.jpeg', 'serg.jpeg'];
+artists = ['LP', 'Serj Tankian', 'Rammstein', 'Placebo', 'Serj Tankian'];
+songTitles = ['Forever for now', 'Goodbye', 'Mann gegen mann', 'Meds', 'Empty walls'];
 
 let currentSong = 0;
 
-let audio_btns = document.querySelector(".audio-btns");
-let audio = document.createElement('audio');
-audio.src = audios[currentSong];
-let playBtn = document.querySelector(".play-pause");
-
 function togglePlayPause() {
-    
-    if(audio.paused) {
-            audio.play();
-            playBtn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+    if(song.paused) {
+        song.play();
+        playBtn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
     } else {
-            audio.pause();
-            playBtn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+        song.pause();
+        playBtn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
     }
-}    
+}   
 
-playBtn.addEventListener("click", togglePlayPause);
+function nextSong() { // ADD TO START FROM INDEX 0 WHEN LIST ENDS
+    currentSong++;
+    song.src = songs[currentSong];
 
-let decreaseBtn = document.querySelector('.decrease');
-decreaseBtn.addEventListener('click', decreaseVolume);
-let increaseBtn = document.querySelector('.increase');
-increaseBtn.addEventListener('click', increaseVolume);
-
-
-function decreaseVolume() {
-    audio.volume -= 0.25;
+    // cover.src = covers[currentSong]; DOESN'T WORK
+    
+    // songArtist.innerHTML = artists[currentSong]; DOESN'T WORK
+    songTitle.innerHTML = songTitles[currentSong];
+    togglePlayPause();
 }
-
-function increaseVolume() {
-    audio.volume += 0.25;
-}
-
-
-let muteBtn = document.querySelector('.mute');
-muteBtn.addEventListener('click', mute);
 
 function mute() {
-    if (audio.muted == false) {
+    if (song.muted == false) {
     muteBtn.muted = true;
-    audio.muted = true;
+    song.muted = true;
     } else {
-    audio.muted = false; 
+    song.muted = false; 
     muteBtn.muted = false;
     }
 }
+
+function decreaseVolume() {
+    song.volume -= 0.25;
+}
+
+function increaseVolume() {
+    song.volume += 0.25;
+}
+
+// EVENT LISTENERS, SHALL WE UNITE THEM SOMEHOW??
+
+song.addEventListener('ended', function() {
+    nextSong();
+});
+forward.addEventListener('click', function() {
+    nextSong();
+});
+
+playBtn.addEventListener("click", togglePlayPause);
+decreaseBtn.addEventListener('click', decreaseVolume);
+increaseBtn.addEventListener('click', increaseVolume);
+muteBtn.addEventListener('click', mute);
+
+
+
 
 
 
