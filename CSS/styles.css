@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url('../Media/background.jpg');
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: -15px;
+}
+.player {
+    background-color: rgba(177, 169, 152, 0.7);
+    width: 350px;
+    height: 620px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px rgb(69, 70, 63), -1px -1px 20px rgb(58, 57, 55);
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+img {
+    width: 60%;
+    height: auto;
+    box-shadow: 1px 1px 15px rgb(69, 70, 63), 1px 1px 15px rgb(69, 70, 63);
+    border-radius: 50%;
+    margin: 50px 15px 0 63px;
+    transition: all 0.3s;
+}
+
+.img img {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img:hover {
+    transform: scale(1.03);
+}
+
+.title {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.title h1 {
+    font-size: 2em;
+    margin: 30px 0 10px 0;
+}
+
+.title p {
+    color: white;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.audio-btns {
+    background-color: rgba(129, 118, 100, 0.7);
+    margin: 40px auto;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    border-top: 15px solid rgba(90, 84, 74, 0.7);;
+}
+
+.audio-btns:hover {
+    color: white;
+}
+
+.play-btns {
+    padding: 30px 20px 20px 0;
+}
+
+.play-btns a {
+    color: rgb(119, 87, 75);
+    margin: 0 20px 0 30px;
+    font-size: 1.8em;
+    transition: all 0.5;
+
+}
+
+.play-pause {
+    background-color: rgb(202, 198, 165, 0.7);
+    padding: 15px 15px 15px 18px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 25px rgb(85, 85, 74);
+    transition: all 0.3s;
+}
+
+.play-pause:hover {
+    background-color: rgb(95, 90, 73, 0.6);
+    color:rgb(202, 198, 165, 0.7);
+
+}
+
+.sound-btns {
+    margin: 20px 15px 0 0;
+}
+
+.sound-btns a{
+    color: rgb(88, 87, 71);
+    margin: 0 40px;
+    font-size: 1.5em;
+}
+
+.sound-btns button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: rgb(85, 85, 74);
+    transition: all 0.3s;
+}
+
+.sound-btns button:hover {
+    background-color: rgb(95, 90, 73, 0.6);
+    color:rgb(202, 198, 165, 0.7);
