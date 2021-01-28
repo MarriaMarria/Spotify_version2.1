@@ -1,4 +1,4 @@
-let audios = ['./Media/LP_Lost.mp3', './Media/Mann.mp3'];
+let audios = ['./Media/forever.mp3', './Media/goodbye.mp3'];
 let covers = ['lplost.jpeg', 'mann.jpeg', 'meds.jpeg', 'serggate.jpeg'];
 
 // Object of audio
