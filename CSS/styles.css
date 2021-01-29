@@ -72,8 +72,8 @@ img {
 
 .audio-btns {
     background-color: rgba(129, 118, 100, 0.7);
-    margin: 30px auto;
-    height: 200px;
+    margin-top: 60px;
+    height: 245px;
     width: 100%;
     text-align: center;
     border-top: 15px solid rgba(90, 84, 74, 0.7);;

@@ -9,10 +9,11 @@ const increaseBtn = document.querySelector('.increase');
 const forward = document.querySelector('.forward');
 const muteBtn = document.querySelector('.mute');
 
-songs = ['./Media/forever.mp3', './Media/goodbye.mp3', './Media/mann.mp3', './Media/meds.mp3', './Media/walls.mp3'];
-covers = ['lp_forever.jpeg', 'gate21.jpeg', 'mann.jpeg', 'meds.jpeg', 'serg.jpeg'];
-artists = ['LP', 'Serj Tankian', 'Rammstein', 'Placebo', 'Serj Tankian'];
-songTitles = ['Forever for now', 'Goodbye', 'Mann gegen mann', 'Meds', 'Empty walls'];
+// MAKE OBJECT
+const songs = ['./Media/forever.mp3', './Media/goodbye.mp3', './Media/mann.mp3', './Media/meds.mp3', './Media/walls.mp3'];
+const covers = ['./Media/lp_forever.jpeg', './Media/gate21.jpeg', './Media/mann.jpeg', './Media/meds.jpeg', './Media/serj.jpeg'];
+const artists = ['LP', 'Serj Tankian', 'Rammstein', 'Placebo', 'Serj Tankian'];
+const songTitles = ['Forever for now', 'Goodbye', 'Mann gegen mann', 'Meds', 'Empty walls'];
 
 let currentSong = 0;
 
@@ -29,10 +30,8 @@ function togglePlayPause() {
 function nextSong() { // ADD TO START FROM INDEX 0 WHEN LIST ENDS
     currentSong++;
     song.src = songs[currentSong];
-
-    // cover.src = covers[currentSong]; DOESN'T WORK
-    
-    // songArtist.innerHTML = artists[currentSong]; DOESN'T WORK
+    cover.src = covers[currentSong]; 
+    songArtist.innerHTML = artists[currentSong]; 
     songTitle.innerHTML = songTitles[currentSong];
     togglePlayPause();
 }
